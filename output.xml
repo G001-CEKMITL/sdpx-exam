@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.18 on darwin)" generated="20231010 17:05:44.292" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot" source="/Users/earthzaza/Desktop/work/sdpx-exam/robot.robot">
+<test id="s1-t1" name="number value is not prime 20" line="19">
+<kw name="is prime">
+<var>${response}</var>
+<arg>${case1}</arg>
+<arg>${path}</arg>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://localhost:5050/${path}/${number}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231010 17:05:44.328" level="INFO">GET Request : url=http://localhost:5050/is_prime/20 
+ path_url=/is_prime/20 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231010 17:05:44.328" level="INFO">GET Response : url=http://localhost:5050/is_prime/20 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.0 Python/3.9.18', 'Date': 'Tue, 10 Oct 2023 10:05:44 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '5', 'Connection': 'close'} 
+ body=False 
+ </msg>
+<msg timestamp="20231010 17:05:44.328" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.322" endtime="20231010 17:05:44.328"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231010 17:05:44.328" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.328" endtime="20231010 17:05:44.328"/>
+</kw>
+<msg timestamp="20231010 17:05:44.329" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20231010 17:05:44.322" endtime="20231010 17:05:44.329"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response}</arg>
+<arg>False</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231010 17:05:44.329" level="INFO">Argument types are:
+&lt;class 'bytes'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.329" endtime="20231010 17:05:44.329"/>
+</kw>
+<status status="PASS" starttime="20231010 17:05:44.322" endtime="20231010 17:05:44.329"/>
+</test>
+<test id="s1-t2" name="number value is not prime 70" line="23">
+<kw name="is prime">
+<var>${response}</var>
+<arg>${case2}</arg>
+<arg>${path}</arg>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://localhost:5050/${path}/${number}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231010 17:05:44.331" level="INFO">GET Request : url=http://localhost:5050/is_prime/70 
+ path_url=/is_prime/70 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231010 17:05:44.331" level="INFO">GET Response : url=http://localhost:5050/is_prime/70 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.0 Python/3.9.18', 'Date': 'Tue, 10 Oct 2023 10:05:44 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '5', 'Connection': 'close'} 
+ body=False 
+ </msg>
+<msg timestamp="20231010 17:05:44.331" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.329" endtime="20231010 17:05:44.331"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231010 17:05:44.331" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.331" endtime="20231010 17:05:44.331"/>
+</kw>
+<msg timestamp="20231010 17:05:44.331" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20231010 17:05:44.329" endtime="20231010 17:05:44.331"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response}</arg>
+<arg>False</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231010 17:05:44.332" level="INFO">Argument types are:
+&lt;class 'bytes'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.332" endtime="20231010 17:05:44.332"/>
+</kw>
+<status status="PASS" starttime="20231010 17:05:44.329" endtime="20231010 17:05:44.332"/>
+</test>
+<test id="s1-t3" name="number value is prime 13" line="26">
+<kw name="is prime">
+<var>${response}</var>
+<arg>${case3}</arg>
+<arg>${path}</arg>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://localhost:5050/${path}/${number}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231010 17:05:44.334" level="INFO">GET Request : url=http://localhost:5050/is_prime/13 
+ path_url=/is_prime/13 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231010 17:05:44.334" level="INFO">GET Response : url=http://localhost:5050/is_prime/13 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.0 Python/3.9.18', 'Date': 'Tue, 10 Oct 2023 10:05:44 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '4', 'Connection': 'close'} 
+ body=True 
+ </msg>
+<msg timestamp="20231010 17:05:44.334" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.332" endtime="20231010 17:05:44.334"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231010 17:05:44.335" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.334" endtime="20231010 17:05:44.335"/>
+</kw>
+<msg timestamp="20231010 17:05:44.335" level="INFO">${response} = True</msg>
+<status status="PASS" starttime="20231010 17:05:44.332" endtime="20231010 17:05:44.335"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response}</arg>
+<arg>True</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231010 17:05:44.335" level="INFO">Argument types are:
+&lt;class 'bytes'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231010 17:05:44.335" endtime="20231010 17:05:44.335"/>
+</kw>
+<status status="PASS" starttime="20231010 17:05:44.332" endtime="20231010 17:05:44.335"/>
+</test>
+<status status="PASS" starttime="20231010 17:05:44.293" endtime="20231010 17:05:44.335"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Robot">Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
