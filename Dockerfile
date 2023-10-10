@@ -3,6 +3,8 @@ from python:alpine3.17
 WORKDIR /app
 
 COPY . .
+
+ENV FLASK_APP=main.py
 RUN apk add libffi-dev
 RUN apk add build-base
 RUN pip install --upgrade pip
