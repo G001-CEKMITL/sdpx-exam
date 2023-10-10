@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build'){
+            agent{
+                label 'test'
+            }
+            steps{
+                sh 'docker stop $(docker ps -a -q)'
+                sh 'docker system prune -a -f'
+                echo 'Building the project'
+                sh 'docker build -t myapp .'
+                sh 'docker run -d -p 4567:5000 myapp'
+            }
+        }
+        stage
+       stage('testing'){
+            agent{
+                label 'test'
+            }
+            steps{
+                echo 'testing the project'
+                sh 'python3 -m unittest discover -s tests -p "*_test.py"'
+                echo 'robot testing'
+                sh 'robot robot.robot'
+            }
+        }
+        stage('Deploy on pre-prod'){
+            agent{
+                label 'pre-prod'
+            }
+            steps{
+                echo 'Deploying the project'
+                sh 'docker stop $(docker ps -a -q)'
+                sh 'docker system prune -a -f'
+                sh 'docker build -t myapp .'
+                sh 'docker run -d -p 4567:5000 myapp'
+            }
+        }
+    }
+}
