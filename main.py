@@ -6,6 +6,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
+#test
 @app.route('/is_prime/<int:num>')
 def is_prime(num):
     if num < 2:
