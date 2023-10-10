@@ -7,11 +7,12 @@ ${path}       is_prime
 ${case1}      20
 ${case2}      70
 ${case3}      13
+${port}       4567
 
 ***keyword***
 is prime
     [Arguments]    ${number}    ${path}
-    ${response}=    Get    http://localhost:5050/${path}/${number}
+    ${response}=    Get    http://localhost:4567/${path}/${number}
     Should Be Equal As Strings    ${response.status_code}    200
     [return]   ${response.content}
 
