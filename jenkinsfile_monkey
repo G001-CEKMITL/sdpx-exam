@@ -6,7 +6,7 @@ pipeline{
                 label 'test'
             }
             steps{
-                sh 'docker stop $(docker ps -a -q)'
+                sh 'docker stop $(docker ps -a -q) || true'
                 sh 'docker system prune -a -f'
                 echo 'Building the project'
                 sh 'docker build -t myapp .'
@@ -31,7 +31,7 @@ pipeline{
             }
             steps{
                 echo 'Deploying the project'
-                sh 'docker stop $(docker ps -a -q)'
+                sh 'docker stop $(docker ps -a -q)|| true'
                 sh 'docker system prune -a -f'
                 sh 'docker build -t myapp .'
                 sh 'docker run -d -p 4567:5000 myapp'
