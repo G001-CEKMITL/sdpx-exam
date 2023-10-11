@@ -2,7 +2,7 @@
 Library    RequestsLibrary
 
 *** Variables ***
-${url}    http://127.0.0.1:5000
+${url}    http://127.0.0.1:4567
 ${path}    is_prime
 ${case01}    17
 ${case02}    36
