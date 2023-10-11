@@ -19,7 +19,7 @@ pipeline{
             }
             steps{
                 echo 'testing the project'
-                sh 'python3 -m unittest discover -s tests -p "*_test.py"'
+                sh 'python3 -m unittest discover -s . -p "*_test.py"'
                 echo 'robot testing'
                 sh 'robot robot.robot'
             }
