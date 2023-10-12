@@ -1,0 +1,34 @@
+pipeline{
+    agent any
+    stages{
+        stage("run"){
+            agent{
+                label 'test'
+            }
+            steps{
+                echo 'running the project'
+                sh python3 main.py
+            }
+        }
+        stage("test"){
+            agent{
+                label 'test'
+            }
+            steps{
+                echo 'testing the project'
+                sh 'python3 -m unittest discover -s . -p "*_test.py"'
+                echo 'robot testing'
+                sh 'robot robot.robot'
+            }
+        }
+    stage("run on prod"){
+            agent{
+                label 'pre-prod'
+            }
+            steps{
+                echo 'running the project'
+                sh 'python3 main.py'
+            }
+    }
+    }
+}
