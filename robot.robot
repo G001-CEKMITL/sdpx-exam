@@ -2,7 +2,7 @@
 Library    RequestsLibrary
 
 *** Variables ***
-${url}    http://127.0.0.1:5050
+${url}    http://127.0.0.1:4567
 ${path}    next2
 ${case01}    5
 ${case02}    -5
