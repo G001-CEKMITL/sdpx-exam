@@ -7,14 +7,12 @@ def hello_world():
     return 'Hello World!'
 
 #test
-@app.route('/is_prime/<int:num>')
-def is_prime(num):
-    if num < 2:
-        return 'False'
-    for i in range(2, num):
-        if num % i == 0:
-            return 'False'
-    return 'True'
+@app.route('/next2/<num>')
+#can be negative
+def next2(num):
+    num = float(num)
+    return str(int(num + 2)) if num % 1 == 0 else str(num + 2)
+
 
 
 if __name__ == '__main__':
