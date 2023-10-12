@@ -2,11 +2,11 @@
 Library    RequestsLibrary
 
 *** Variables ***
-${url}    http://127.0.0.1:4567
-${path}    is_prime
-${case01}    17
-${case02}    36
-${case03}    13219
+${url}    http://127.0.0.1:5050
+${path}    next2
+${case01}    5
+${case02}    -5
+${case03}    3.5
 
 *** Keywords ***
 is_prime
@@ -16,14 +16,14 @@ is_prime
     [Return]    ${response}
 
 *** Test Cases ***
-number is prime ${case01}
+be 7 when x is ${case01}
     ${response}=    is_prime    ${case01}    ${path}
-    should be equal as strings    ${response.content}    True
+    should be equal as strings    ${response.content}    7
 
-number is not prime ${case02}
+be neg3 when x is ${case02}
     ${response}=    is_prime    ${case02}    ${path}
-    should be equal as strings    ${response.content}    False
+    should be equal as strings    ${response.content}    -3
 
-number is prime ${case03}
+be 5dot5 when x is ${case03}
     ${response}=    is_prime    ${case03}    ${path}
-    should be equal as strings    ${response.content}    True
+    should be equal as strings    ${response.content}    5.5

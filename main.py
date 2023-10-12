@@ -7,10 +7,11 @@ def hello_world():
     return 'Hello World!'
 
 #test
-@app.route('/next2/<float:num>')
+@app.route('/next2/<num>')
 #can be negative
 def next2(num):
-    return str(num + 2)
+    num = float(num)
+    return str(int(num + 2)) if num % 1 == 0 else str(num + 2)
 
 
 
